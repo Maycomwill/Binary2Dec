@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: 'Oxygen', sans-serif;
+    background-color: #11151C;
+    color: #E5E5E5;
+}
+
+.main-card{
+    display: flex;
+    width: clamp(250px, 60%, 900px);
+    height: 60%;
+    background-color: #212D40;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+    border-radius: 25px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.main-card h1{
+    margin: 10px 10px;
+    text-align: center;
+    transition: all 250ms ease-in-out;
+}
+#bI{
+    width: 100%;
+    height: 55px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 14pt;
+    padding-left: 2px;
+}
+
+#label-input > span{
+    position: absolute;
+    font-size: 0.8em;
+    color: #11151C;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 19.5px 10px;
+    cursor:text;
+    transition: all 500ms ease;
+}
+
+#label-input .span-active{
+    font-size: 0.6em;
+    margin:4px 4px;
+    color: #A71D31;
+}
+
+
+#buttonConverter{
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    outline: none;
+    border: solid 1px rgba(0, 0, 0, 0);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    background-color: #364156;
+    font-size: 16pt;
+    transition: all 250ms ease-in-out;
+}
+
+#buttonConverter:hover{
+    border: solid 1px rgba(0, 0, 0, 1);
+    cursor: pointer;
+    background-color: #A71D31;
+    color: #E5E5E5;
+}
+
+.resultDiv{
+    font-size: 18pt;
+    font-weight: 300;
+    text-align: center;
+    transition: all 250ms ease-in-out;
+}
+
+.footer{
+    font-style: italic;
+}
+
+@media only screen and (max-width: 650px){
+    
+    .main-card h1{
+        font-size: 16pt;
+    } 
+
+    #buttonConverter{
+        font-size: 12pt;
+    }
+
+
+    .resultDiv{
+        font-size: 14pt;
+    }  
+}
