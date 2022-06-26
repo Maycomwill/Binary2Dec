@@ -1,6 +1,6 @@
 # Binary2Dec
 
-# Um programa desenvolvido como atividade do repositório app-ideas
+# Um programa desenvolvido como atividade do repositório [app-ideas](https://github.com/florinpop17/app-ideas)
 
   - Conversão de números binários de até 8 dígitos para números decimais
 
