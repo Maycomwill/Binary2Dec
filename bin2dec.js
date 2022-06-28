@@ -2,9 +2,6 @@ const numberBinary = document.getElementById('bI');
 const button = document.getElementById('buttonConverter');
 var resultText = document.getElementById('resultText').innerText;
 
-
-
-
 var binaryNumber;
 var binaryArrayString;
 var binaryArrayNumber = [];
@@ -21,91 +18,9 @@ function binary(event) {
 function converter() {
 
     binaryArrayNumber = binaryArrayString.map(Number);
-    console.log(binaryArrayNumber);
-
-    if (binaryArrayNumber.length <= 8) {
-        switch(binaryArrayString.length){
-            case 1:
-                oneDig();
-            break;
-            case 2:
-                twoDig();
-            break;
-            case 3:
-                threeDig();
-            break;
-            case 4:
-                fourDig();
-            break;
-            case 5:
-                fiveDig();
-            break;
-            case 6:
-                sixDig();
-            break;
-            case 7:
-                sevenDig();
-            break;
-            case 8:
-                eightDig();
-            break; 
-    };
-    } else{
-    document.getElementById('resultText').innerText = "A quantidade de números digitados é inválida."
-    };
-
-}
-
-function oneDig() {
-    resultado = binaryArrayNumber[0] * (2**0);
-    console.log(resultado);
-    document.getElementById('resultText').innerText = `O número binário "${binaryNumber}" corresponde ao número decimal "${resultado}"`;
-}
-
-function twoDig() {
-    resultado = binaryArrayNumber[1] * (2**0) + binaryArrayNumber[0] * (2**1);
-    console.log(resultado)
-    document.getElementById('resultText').innerText = `O número binário "${binaryNumber}" corresponde ao número decimal "${resultado}"`;
-}
-
-function threeDig() {
-    resultado = binaryArrayNumber[2] * (2**0) + binaryArrayNumber[1] * (2**1) + binaryArrayNumber[0] * (2**2);
-    console.log(resultado)
-    document.getElementById('resultText').innerText = `O número binário "${binaryNumber}" corresponde ao número decimal "${resultado}"`;
-}
-
-
-function fourDig() {
-    resultado = binaryArrayNumber[3] * (2**0) + binaryArrayNumber[2] * (2**1) + binaryArrayNumber[1] * (2**2) + binaryArrayNumber[0] * (2**3);
-    console.log(resultado)
-    document.getElementById('resultText').innerText = `O número binário "${binaryNumber}" corresponde ao número decimal "${resultado}"`;
-}
-
-
-function fiveDig() {
-    resultado = binaryArrayNumber[4] * (2**0) + binaryArrayNumber[3] * (2**1) + binaryArrayNumber[2] * (2**2) + binaryArrayNumber[1] * (2**3) + binaryArrayNumber[0] * (2**4);
-    console.log(resultado)
-    document.getElementById('resultText').innerText = `O número binário "${binaryNumber}" corresponde ao número decimal "${resultado}"`;
-}
-
-
-function sixDig() {
-    resultado = binaryArrayNumber[5] * (2**0) + binaryArrayNumber[4] * (2**1) + binaryArrayNumber[3] * (2**2) + binaryArrayNumber[2] * (2**3) + binaryArrayNumber[1] * (2**4) + binaryArrayNumber[0] * (2**5);
-    console.log(resultado)
-    document.getElementById('resultText').innerText = `O número binário "${binaryNumber}" corresponde ao número decimal "${resultado}"`;
-}
-
-
-function sevenDig() {
-    resultado = binaryArrayNumber[6] * (2**0) + binaryArrayNumber[5] * (2**1) + binaryArrayNumber[4] * (2**2) + binaryArrayNumber[3] * (2**3) + binaryArrayNumber[2] * (2**4) + binaryArrayNumber[1] * (2**5) + binaryArrayNumber[0] * (2**6);
-    console.log(resultado)
-    document.getElementById('resultText').innerText = `O número binário "${binaryNumber}" corresponde ao número decimal "${resultado}"`;
-}
-
-
-function eightDig() {
-    resultado = binaryArrayNumber[7] * (2**0) + binaryArrayNumber[6] * (2**1) + binaryArrayNumber[5] * (2**2) + binaryArrayNumber[4] * (2**3) + binaryArrayNumber[3] * (2**4) + binaryArrayNumber[2] * (2**5) + binaryArrayNumber[1] * (2**6) + binaryArrayNumber[0] * (2**7);
-    console.log(resultado)
+    const resultado = binaryArrayNumber.reduce (
+        (resultado, proximoNumero, idx) => resultado + proximoNumero * Math.pow(2, idx)
+    )
     document.getElementById('resultText').innerText = `O número binário "${binaryNumber}" corresponde ao número decimal "${resultado}"`;
 }
 
